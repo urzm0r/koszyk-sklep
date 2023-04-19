@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    --u: 10px;
+    /* #adc2ff */
+    --main: #0038E0;
+    --grey: #050505;
+    --secd: #000514;
+    --whte: #eee;
+
+    color: var(--whte);
+    font-family: sans-serif;
+}
+
+
+button {
+    color: var(--whte);
+    background-color: var(--grey);
+    border: 1px solid var(--main);
+    box-shadow: 0 0 5px var(--main)
+}
+
+button:hover {
+    color: var(--whte);
+    background-color: var(--main);
+    border: 1px solid var(--whte);
+    box-shadow: 0 0 10px var(--whte)
+}
+
+.flex-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background-color: var(--grey);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secd);
+
+    border-bottom: var(--u) solid var(--main);
+}
+
+nav>* {
+    height: calc(var(--u) * 5);
+}
+
+nav>a {
+    text-align: center;
+    display: block;
+    height: 100%;
+    padding-top: calc(var(--u) * 2);
+    padding-bottom: calc(var(--u) * 2);
+    width: 100%;
+}
+
+nav>a:hover {
+    background-color: var(--main);
+}
+
+#user {
+    width: calc(var(--u) * 5);
+    height: 100%;
+    margin-right: var(--u);
+    margin-left: var(--u);
+}
+
+.user-btnsystem {
+    display: inline-block;
+    right: 0;
+    position: relative;
+}
+
+#user-menu a {
+    padding: var(--u);
+    box-sizing:border-box;
+    width: 100%;
+    height: 100%;
+}
+
+#user-menu a:hover {
+    background-color: var(--main);
+}
+
+
+:where(#user-menu) {
+    position: absolute;
+    background-color: var(--grey);
+    right: 0;
+    display: inline-flex;
+    flex-direction: column;
+    border: 1px solid var(--whte);
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+/** main */
+
+main {
+    min-height: 0;
+    box-shadow: 0 0 15px var(--main);
+    width: min(calc(100% - calc(10 * var(--u))), 1230px);
+    margin-top: calc(5 * var(--u));
+    border: 1px solid var(--main);
+    display: flex;
+
+    aspect-ratio: 55/34;
+    margin-bottom: calc(2 * var(--u));
+
+    background-color: var(--secd);
+}
+
+
+#cart {
+    width: 100%;
+    margin-right: 0;
+    padding: var(--u);
+    overflow-y:scroll;
+    background-color: var(--secd);
+}
+
+main>div {
+    margin: var(--u);
+    border: 1px solid var(--main);
+}
+
+.item {
+    box-shadow: 0 0 5px var(--main);
+    padding: var(--u);
+    border: 1px solid var(--whte);
+    margin-bottom: var(--u);
+    background-color: var(--grey);
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item>h3 {
+    margin-bottom: var(--u);
+}
+
+.item-price {
+    border-radius: 5px;
+    background-color: var(--main);
+    padding: 5px;
+    color: var(--whte);
+}
+
+.item>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove {
+    display: block;
+    height: calc(5 * var(--u));
+    aspect-ratio: 1/1;
+}
+
+.item input {
+    width: calc(6 * var(--u));
+    font-size: 1.2rem;
+    color: var(--grey)
+}
+
+.item label {
+    margin-right: var(--u);
+    height: min-content;
+}
+
+.input-div {
+    width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.item>* {
+    border: 1px dashed var(--whte);
+}
+*/
+
+.checkout {
+    background-color: var(--secd);
+    box-sizing: border-box;
+    height: calc(100% - 2 * var(--u));
+    aspect-ratio: 34/55;
+}
+
+.checkout-in {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--u);
+}
+
+.value-p {
+    margin: var(--u);
+    font-size: 2rem;
+}
+
+#value {
+    font-size: 4rem;
+}
+
+#pay {
+    font-size: 2rem;
+    margin: var(--u);
+    width: 100%;
+}
+
+.user-menu-hide {
+    display: none;
+}
+
+/* recmd */
+.recmd {
+    box-shadow: 0 0 15px var(--main);
+    width: min(calc(100% - calc(10 * var(--u))), 1230px);
+    margin: calc(5 * var(--u));
+    margin-top: 0;
+    border: 1px solid var(--main);
+    background-color: var(--secd);
+}
+
+.recmd h2 {
+    margin: var(--u);
+}
+
+.recmd-itemhold {
+    display: flex;
+    margin: calc(2 * var(--u));
+    overflow-x: scroll;
+    margin-top: var(--u);
+}
+
+.recmd-card {
+    box-shadow: 0 0 5px var(--main);
+    width: calc(15 * var(--u));
+    aspect-ratio: 34/55;
+    border: 1px solid var(--whte);
+    background-color: var(--grey);
+    padding: calc(2 * var(--u));
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-right: var(--u);
+    margin-bottom: var(--u);
+}
+
+.recmd-card img {
+    width: 100%;
+    margin-bottom: var(--u);
+}
+
+.recmd-card h3 {
+    font-size: 2rem;
+}
+
+.recmd-card h4 {
+    background-color: var(--main);
+    color: var(--whte);
+    border-radius: 5px;
+    width: min-content;
+    padding: 5px;
+}
+
+.recmd-card:last-child {
+    margin-right: 0;
+}
+
+.recmd-card button {
+    height: calc(4 * var(--u));
+    margin-top: var(--u);
+}
+
+@media only screen and (width < 700px) {
+    main {
+        width: min(calc(100% - calc(4 * var(--u))), 1230px);
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        aspect-ratio: auto;
+    }
+
+    #cart {
+        width: auto;
+        max-height: calc(50 * var(--u));
+    }
+
+    .item>div {
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: center;
+        row-gap: var(--u);
+    }
+    /*
+    .item img {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: auto;
+    }
+    */
+
+    .input-div {
+        width: 100%;
+    }
+    .remove {
+        aspect-ratio: 8/5;
+    }
+
+    .checkout {
+        box-sizing: border-box;
+        height: auto;
+        aspect-ratio: auto;
+        padding-bottom: calc(5 * var(--u));
+    }
+
+    .recmd {
+        width: min(calc(100% - calc(4 * var(--u))), 1230px);
+    }
+
+    #user-menu {
+        width: 70vw;
+    }
+
+    #user-menu a {
+        height: calc(8 * var(--u));
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
